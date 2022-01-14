@@ -7,17 +7,25 @@ import pandas as pd
 import requests
 from urllib.parse import urlparse
 
-# pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 pdfDirPath = "Pdf"
 imageDirPath = "Image"
 excelDirPath = "Excel"
-
 excelFilePath = os.path.join(excelDirPath, "Sample.xlsx")
 newExcelFilePath = os.path.join(excelDirPath, "Sample2.xlsx")
-print("READING EXCEL {0}...".format(excelFilePath))
-df = pd.read_excel(excelFilePath)
 
+if os.path.exists(newExcelFilePath):
+	os.remove(newExcelFilePath)
+
+if not os.path.exists(imageDirPath):
+	print("CREATING IMAGE DIRECTORY...")
+	os.mkdir(imageDirPath)
+	
+if not os.path.exists(pdfDirPath):
+	print("CREATING PDF DIRECTORY...")
+	os.mkdir(pdfDirPath)
+	
 print("REMOVING CURRENT PDF FILES")
 pdfFiles = os.listdir(pdfDirPath)
 for pdfFile in pdfFiles:
@@ -27,9 +35,9 @@ print("REMOVING CURRENT IMAGE FILES")
 imageFiles = os.listdir(imageDirPath)
 for imageFile in imageFiles:
 	os.remove(os.path.join(imageDirPath, imageFile))
-	
-if os.path.exists(newExcelFilePath):
-	os.remove(newExcelFilePath)
+
+print("READING EXCEL {0}...".format(excelFilePath))
+df = pd.read_excel(excelFilePath)
 
 newDF = {}
 newDF['Link'] = []
