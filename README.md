@@ -1,1 +1,1 @@
-# SearchPDFScansForText
+<h1>Search PDF Scans for Text</h1>
