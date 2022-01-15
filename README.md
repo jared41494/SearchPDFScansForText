@@ -20,7 +20,7 @@
 	These are the modules that need to be installed utilizing <code>pip install &lt;module&gt;</code> in the command line.
 </p>
 <h3>Modules:</h3>
-<ol>
+<ul>
 	<li>pdf2image</li>
 	<li>pandas</li>
 	<li>pytesseract</li>
@@ -28,9 +28,13 @@
 	<li>requests</li>
 	<li>opencv-python</li>
 	<li>pytesseract</li>
-</ol>
+</ul>
 
 <h2>Required Applications:</h2>
 <p>
 	In addition to the modules, a few other applications will need to be installed on your machine. I have included the appropriate tutorials on how to install these applications and where to install these applications.
 </p>
+<ul>
+	<li>Poppler: <a href="https://pypi.org/project/python-poppler/#description">Instructions and Download</a></li>
+	<li>Pytesseract: <a href="https://pypi.org/project/pytesseract/">Instructions and Download</a></li>
+</ul>
